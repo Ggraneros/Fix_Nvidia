@@ -1,0 +1,33 @@
+Actualizar nuestro sistema:
+- sudo pacman -Syu
+
+Luego tener los comandos de desarrollo actualizados:
+- sudo pacman -S base base-devel
+
+Instalar GIT
+- sudo pacman -S git
+
+Luego buscar yay (suele ser este https://aur.archlinux.org/yay.git  pero se puede buscar como yay aur). Moverse a una carpeta que sea de facil acceso, por ejemplo /Documentos y clonar el repositorio ahi.
+- git clone https://aur.archlinux.org/yay.git
+Aparecera un nuevo directorio llamado yay. Moverse a el (cd yay) y crear un paquete (makepkg -si )
+
+Instalar el driver de Nvidia con sus utilidades.
+- sudo pacman -S nvidia nvidia-utils nvidia settings
+
+Reboot
+
+Corroborar que tenemos el driver instalado
+- lspci | grep -e VGA
+
+si todo salió bien, deberia tener el nvida x settings en el lanzador de aplicaciones.
+
+Abrimos la app y configuramos a nuestro gusto.
+
+Probablemente, cuando la maquina vuelva a reiniciarse, este todo con zoom. Para Fixear esto, busca el directorio /etc/ y dale  permisos de escritura a otros (chmod o=rwx X11).
+Muevete al directorio, busca el archivo xorg.conf.d y abrelo con vim. Busca la linea DEVICE y agrega esta linea:
+
+Option "DPI" "96x96"
+
+Guardar y reiniciar.
+
+
