@@ -36,5 +36,66 @@ Una opcion mas facil, es utilizar la propiedad round seguido del numero de decim
     Nos daria como resultado 3.3
 
 
+OPERADORES LOGICOS: AND, OR y NOT
+Se utilizan para evaluar ciertas condiciones.
 
+- AND se utiliza para comparar y los elementos deben cumplir una condicion:
+    ejemplo:
+            print("true and true =>", True and True) Seria True
+            print("true and False =>", True and false) Seria False
+            print("false and true =>", False and True) Seria False
+            print("False and false =>", False and False) Seria False
+            print(10 > 5 and 5 < 10) nos daria True
+            print(10 > 5 and 5 > 10) nos daria False
+
+
+        NOTA: Solo es verdadero cuando todas las condiciones se cumplen.
+
+
+- OR se utiliza para comparar y al menos uno de los elementos se debe cumplir.
+    Ejemplo:
+            print("true or true =>", True or True) Seria True
+            print("true or False =>", True or false) Seria True
+            print("false or true =>", False or True) Seria True
+            print("False or false =>", False or False) Seria False
+
+            role = input("Ingrese su rol: ")
+            print(role == "admin" or role == "sysadmin")
+            cualquier otra cosa que no sea admin o sysadmin daria False.
+        NOTA: Solo es False cuando ninguna condicion se cumple.
+
+- NOT se utiliza para invertir o negar y cambiar una condicion booleana.
+    Ejemplo:
+            stock = int(input("Por favor, ingrese un numero entre 100 y 105:"))
+            print(not(stock >= 100 and stock <= 105)) deberia dar True si ingresamos cualquier numero entre 100 y 105, pero dara False
+
+
+CONDICIONALES
+- if siempre es booleano.
+    Ejemplo:
+            pet = input("Cual es tu mascota favorita? ")
+            if pet == "perro":
+                print("Mejor cambiate a los gatos!")
+
+            if pet != "perro":
+                print("Acaricia a la Perlita!")
+- Else acompaña al if. Si if no se cumple, entra en el Else.
+    Ejemplo:
+            pet = input("Cual es tu mascota favorita? ")
+            if pet == "Gato":
+                print("La mejor eleccion!")
+
+            else:
+                print("Deberias pasarte a los gatos, gato!")
+
+- elif se usa para entrar en un bloque si una condicion no se cumple y vaya a evluar a otra.
+    Ejemplo:
+            pet = input("Cual es tu mascota favorita? ")
+
+            if pet == "Perro":
+                print("Deberias ir a buscar al Lobeshno")
+            elif pet == ("Gato"):
+                print("Deberias buscar a la Perlita")
+            else:
+                print("Sos una verga!")
 
