@@ -1,0 +1,40 @@
+OPERADORES DE COMPARACION
+Generalmente son booleanos, es decir que el resultado puede ser mayor o no.
+    Ejemplo:
+    - Mayor o menor
+             print(7 > 9) False
+             print(7 < 9) True
+    - Mayor o igual
+             print(2 >= 1) True
+             print(5 <= 3) False
+    - Igual
+             print(6 == 6) True
+             print(6 == 2) False
+    - Diferente
+             print(6 != 1) True
+             print(6 != 6) False
+
+Los operadores de comparacion pueden utilizarse tambien para str, sin importar si son comillas dobles o simples, pero es Key Sensitive.
+    Ejemplo: print("Apple" == 'Apple') True
+             print("Apple" == 'apple') False
+
+COMPARACION DE NUMEROS FLOTANTES
+si comparamos 2 numeros flotantes como 3.3 y (1.1 + 2.2), el resultado seria el mismo pero nos daria False. Para realizar una conversion en la cual nos diera true, debemos hacerlo con la propiedad tolerance:
+    Ejemplo: x = 3.3
+             y = 1.1 + 2.2
+             print(x == y) False
+             ("x" seria 3.3 e "y" seria 3.3000000000000003)
+
+    Entonces:
+             tolerance = 0.00001
+             print(abs(x - y) < tolerance) True
+             NOTA: abs significa valor absoluto
+
+Una opcion mas facil, es utilizar la propiedad round seguido del numero de decimales.
+    Ejemplo: y = 3.300000000001
+             print(round(y,1))
+    Nos daria como resultado 3.3
+
+
+
+
