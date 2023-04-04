@@ -1,0 +1,148 @@
+REDES COMPUTACIONALES
+Computadoras autonomas interconectadas entre si por la misma tecnologia.
+
+Las señales se distribuyen mediante rangos de frecuencia.
+
+BITS Y BYTES
+Son unidades de informacion en el sistema binario que permiten la comunicacion entre dispositivos. Cada bit es binario, o sea, puede tener valor de 0 o 1 y 8 Bits equivalen a un Byte.
+
+CLASIFICACION DE REDES COMPUTACIONALES
+Las redes tienen dos divisiones principales:
+- Por tecnologia de transmision:
+    * UNICAST: (Enlaces de punto a punto) conecta 1 a 1, es decir, una maquina a otra maquina.
+        1- conecta pares individuales de maquinas.
+        2- puede visitar maquinas intermedias (nodos) entre su origen y su destino.
+    * MULTICAST (uno a varios) conexion uno a varios. Algunos sistemas permiten enviar solo a un subconjunto.
+    * BROADCAST (enlaces de difusion) es cuando todas las maquinas en lared comparten el canal de comunicacion.
+        1- los paquetes que envia la maquina la reciben todas las demas
+        2- se usa un campo de verificacion para saber qa quein pertenece o si enviar a todos los destinos.
+
+- Por escala o tamaño:
+    * PAN: (personal Area Network). Redes de uso personal, como celulares o audifonos,
+    * LAN: (Local Area Network) redes que no conectan una gran area. Por ejemplo, colegios o cybers.
+    *MAN (Metropolitan Area Network) Abarcan toda una ciudad o grandes espacios.
+    * WAN: (Wide Area Network) red de area amplia. Pueden ser paises.
+
+    NOTA: Existen versiones inalambricas de cada uno de los conceptos, como WLAN, WPAN, WMAN y WWAN
+
+
+PROTOCOLOS DE RED
+Son un conjunto de reglas que permiten la comunicacion y transmision de informacion entre dispositivos. La mayoria de las redes, utilizan capas para organizarse. Cada nivel tiene protocolos propios. Cada una de las capas, se contruye a partir de la que tiene debajo. A su vez, cada capa proporciona servicios a la capa superior y oculta detalles de como implementa sus propios servicios la capa inferior.
+La jerarquia de los protocolos y su organizacion reduce la complejidad del diseño de una red y permite la correcta transmision de datos.
+
+
+MODELO TCP/IP
+TCP (transmision control protocol) es un conjunto de directrices que establecen las formas de lso mensajes y los pasos necesarios para que los dispositivos y los programas se comuniquen entre si.
+Se compone de 5 niveles:
+
+- Capa 1: interfaz de red: es el nivel mas bajo. Esta conformado por pulsaciones electricas o transporte fisico. No ser encarca de establecer comunicacion, ssolo de transmitir en le medio fisico.
+Sus protocolos son:
+    * ARP: (Address Resolution Protocol) encuentra las MAC de las IP
+    * Ethernet: tecnologia tradicional para conectar dispositivos en una red LAN
+    * NDP: (Neighborg Discovery Protocol) Resolucion de direcciones y permite a un dispositivo integrarse al ambiente local (red fisica)
+    * L2TP (Layer 2 Tunnel Protocol): Corrige deficiencias de otros protocolos.
+
+- Capa 2: Internet: Se encarga de comunicar dos hosts para trnasmitir los datos, establece la ruta para que llegue la informacion al punto deseado.
+Sus protocolos son:
+    * IP: (Internet Protocol)  para identificacion y comunicacion.
+    * ICMP: (Internet Control Message Protocol) protocolo que utilizan los dispositivos para diagnosticar problemas de comunicacion en la red.
+    * IPSEC: (Insternet Protocol Security) Protocolos que autentican al IP y sifran los paquetes.
+    *IGMP: (Internet Group Management Protocol) Multidifusiion.
+
+- Capa 3: Transporte: Se encarga de transferir los archivos entre los dos hosts, para esto existen varios protocolos. Los principales son TCP y UDP
+Sus protocolos son:
+    * TCP (transmision control protocol) se encarga de transferiri lso dtos priorizando la fiabilidad de los mismos (Que no se pierda informacion)
+    * UDP (User Dataggram Protocol) prioriza la velocidad de daros antes que la fiabilidad. (Por ejemplo, un streaming)
+    * MTP (Micro Transport Protocol) Usado en conexiones Peer 2 Peer
+    * FCP (Fiber Channel Protocol) carga el S.O  y la verificacion.
+    * ICMP: Internet Control Message Protocol. mensajes de error e información operativa.
+    * DCCP: Datagram Congestion Control Protocol. Transporte de mensajes.
+
+- Capa 4: Aplicacion: ofrece a las aplicaciones la posibilidad de acceder a los servicios de las demas capas y define los protocolos  que utilizan las aplicaciones para intercambiar datosm como email, gestores de bases de datos y protocolos de transferencia de archivos (FTP)
+Sus protocolos son:
+    * FTP (File Transfer Protocol) Trasferencia de archivos.
+    * SSH (Secure Shell) para conexiones seguras
+    * SMTP Simple Mail Transfer Protocol. Asigna dinámicamente la * IP y otros parámetros.
+    * DHCP: Dinamic Host Configuration Protocol. Es una manera de establecer una conexión y verificar que todo ocurrió correctamente.
+    * DNS: Domain Name System. Le asigna nombres a las IP de los dominios y se encarga de traducirlos.
+    * RIP: Routing Information Protocol.
+    * SNMP: Simple Network Management Protocol.
+    * HTTP: Hypertext Transfer Protocol.
+
+
+ESTRUCTURA DE IP
+El protocolo IP se encarga del routeo, es decir, la manera en que se va a transmitir la informacion o los caminos que va a tomar.
+    - Este protocolo tiene ciertos rangos para asignar IP
+    - Dentro de tu red, tambien puedes establecer una mascara de sub-red para establecer limites entre los hosts que se pueden tomar.
+
+Una IP (IPv4) esta compuesta por 4 octetos. Los primeros 3 octetos de una IP representan la direccion de red:
+    ejemplo:
+        192   .   168   . 178    .  31
+        8 bits   8 bits   8 bits   8 bits
+
+Cada uno de estos numeros, representan un byte. Es decir que estos 4 numeros, son 8 bits + 8 bits + 8 bits + 8 bits. Es decir: 32 bits. Al ser un sistema binario, solo pueden existir dos posibilidades: 0 y 1. Como es un octeto, sus potencias pueden ser entre (2)0 y (1)7.
+(2)0 = 1        (2)4 = 16
+(2)1 = 2        (2)5 = 32
+(2)2 = 4        (2)6 = 64
+(2)3 = 8        (2)7 = 128
+
+Sumando todos los resultados, daria 255. Osea, cada numero de IP, tiene un rango entre 0 y 255.
+
+RANGOS DE IP
+No se puede utilizar el IP que yo quiera. El uso de las mismas es regulado por un instituto llamado ICANN. Las IPs son asignadas por clases asignadas desde la A hacia la E.
+
+A desde 0.0.0.0   hasta 127.255.255.255 (Utilizada para redes muy grandes)
+B desde 128.0.0.0 hasta 191.255.255.255 (Utilizada para redes de tamaño mediano)
+c desde 192.0.0.0 hasta 223.255.255.255 (Utilizado para redes pequeñas)
+D desde 224.0.0.0 hasta 239.255.255.255 (utilizada para multicast)
+E desde 240.0.0.0 hasta 255.255.255.255 (maximo numero que puede tener una IP)
+
+MODELO OSI (open system interconection)
+El modelo TCP/IP tiene la desventaja de que las capas pueden tener tareas distintas u objetivos distintos entre si. Si bien, el modelo TCP/IP es mas utilizado, el modelo OSi es mejor optimizado y pensado de una mejor manera.
+El modelo OSI tiene 7 capas:
+
+1- Capa de medios fisicos: se ocupa de la conexion fisica entre dispositivos. Es decir, es el hardware, electricidad, cables, etc.
+Sus funciones son:
+    * Establecer y mantener la conexion fisica entre dispositivos
+    * especidficar el tipo de medio de transmision
+    * controlar el flujo de datos
+    * detectar y corregir errores
+    * convertir daros en señales fisicas.
+
+
+2- Capa de enlace de datos: Establece y mantiene un enlacen entre dispositivos, asegurando que los datos se transfieran de manera efectiva y eficiente.
+En esta capa:
+    * se envian los datos convertidos en bits
+    * se le añade informacion sobre el direccionamiento fisico
+    * se llega a la capa de red
+
+3- capa de red: responsavle de enrutar datos entre dispositivos en euna red, tambien determina la ruta mas eficiente para que viajen los datos y garantiza que llegue a destino.
+Funciones:
+    * enrutamiento de datos
+    * direccionamiento de dispositivos
+    * fragmentacion y reensambvklhe de paqueres
+    * control de congestion
+
+4. capa de transporte: responsable de garantizar que los datos se entreguen de manera confiable y en el orden correcto. Agrega control de flujo y comprobacion de errores para garantizar que los datos no se pierdan ni se corrompan durante la transmision. Se encuentra en el protocolo TCP.
+Funciones:
+    * control de fglujo
+    * control de errores
+    * division y reenzamble de paquetes.
+
+5- Capa de sesion: responsable de establecer, mantener y terminar las coneziones entre dispositivos. Permite que los dispositivos se comuniquen entre si.
+Funciones:
+    * establecer conexiones
+    * mantener esos enlaces
+    * dar fin a esas conexiones
+
+6- Capa de presentacion: responsable de convertir los daros a un formato que pueda ser entendido por el dispositivo receptor. Tambien maneja cifrado y compresion de datos para garantizar la transmision de manera segura y eficiente. Formatea los datos para transferirilos a la siguiente capa.
+Funciones:
+    * codificacion y decodificacion de datos
+    * compresion y desocmpresion de datos
+
+7- capa de aplicacion: el nivel mas alto del modelo OSI. responsable de brindar servicios al usuario. Permite a los ususarios interactuar con la red y acceder a los recursos que necesitan.
+
+
+DIFERENCIAS ENTRE OSI Y TCP
+La diferencia reside en que el modelo TCP es un modelo que puede implementarse, ya que especifica tipos de modulaciones, protocolos, cables, etc son necesarios para que pueda existir una conezion de red.
+Mientras , el modelo OSI es de referencia. Es decir, no es un model oque pueda implementarse, sino mas bien, es una interpretacion de lo que deberia tener un modelo para mantener una comunicacion efectiva.
